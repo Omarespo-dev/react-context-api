@@ -1,7 +1,7 @@
 // Importo usesState
 import { useState, useEffect } from "react";
-// importo link e navlink
-import { Link, NavLink } from "react-router-dom";
+// importo PostCard
+import PostCard from "./PostCard";
 
 // Importo axios
 import axios from "axios";
@@ -61,25 +61,7 @@ export default function ListPosts() {
 
                         //{/* post card  with map*/}
                         list.map((post) =>
-                            <section className="post-set" key={post.id} >
-                                <h2>{post.title}</h2>
-
-                                <h4>Image</h4>
-                                <img src={post.image} alt={post.title} />
-
-                                {/* <h3>Contenuto</h3>
-                                <p>{post.content}</p>
-
-                                <h3>Tag</h3>
-                                <p>{post.tags.join(", ")}</p> */}
-                                
-                                <button className="remove" onClick={() => deleteList(post.id)}>RIMUOVI</button>
-                                
-                                <button className="remove">
-                                    <Link to={`/listposts/${post.id}`}>VAI AL DETTAGLIO</Link>
-                                </button>
-                                
-                            </section>
+                            <PostCard key={post.id} post={post}/>
                         )
                     }
 
