@@ -39,8 +39,11 @@ export default function PostsDetails() {
             <h1>{list.title} </h1>
             <img src={list.image} alt={list.title} />
             <div>
-                <p><h4>Contenuto</h4>{list.content}</p>
-                <p><h4>Tag</h4>{list.tags?.join(", ")}</p>
+                <h3>Contenuto</h3>
+                <p>{list.content}</p>
+
+                <h3>Tag</h3>
+                <p>Tag{list.tags?.join(",")}</p>
             </div>
         </div>
 
